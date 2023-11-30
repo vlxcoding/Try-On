@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <title>Dark Mode</title> -->
+    <title>Appointment Scheduling</title>
+</head>
+<body>
+    <div class="switch">
+        Dark mode: <span class="inner-switch">OFF</span>
+    </div>
+
+    <!----> 
+    <div class="tabs">
+        <button id="viewTimeSlotsBtn" onclick="openTab('ViewTimeSlots')">
+            View Time Slots
+        </button>
+    
+        <button id = "makeAppointmentBtn" onclick="openTab('MakeAppointment')">
+            Make Appointment
+        </button>
+
+        <button id="storeLocationsTab" onclick="openTab('StoreLocations')">
+            Store Location 
+        </button>
+
+        <button id="appointmentsListTab" onclick="openTab('appointmentsList')">
+            Appointment List
+        </button>
+    </div>
+
+  
+
+    <div id="ViewTimeSlots" class="tab-content" >
+        <h1>Available Time Slots</h1>
+
+        <div id="timeSlots" class="time-slot-container">
+            <!-- Time slots will be dynamically populated here -->
+        </div>
+        
+        <!-- <button id="viewTimeSlotsBtn">View Time Slots</button> -->
+        <button onclick="location.href='index.html'">Return back to Appointment</button>
+    </div>
+
+    
+
+    <div id="MakeAppointment" class="tab-content">
+         <!-- The Location Header-->
+        <h1>Let's Schedule that Appointment</h1>
+        <div id="appointmentForm">
+            <!-- Form for making an appointment--> 
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName">
+             
+            
+                <label for="selectedLocation">Select Location:</label>
+                <select id="selectedLocation" required>
+                    <!-- Locations will be dynamically populated here -->
+                </select>
+
+            <div id="timeSlots" class="time-slot-container">
+                <!-- Time slots will be dynamically populated here -->
+                   
+                <label for="selectedTimeSlot">Select Time Slot:</label>
+                <select id="selectedTimeSlot" required>
+                    <!-- Time slots will be dynamically populated here -->
+                </select>
+            </div>
+            
+             <!-- Additional Fields -->
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="purpose">Purpose:</label>
+            <input type="text" id="purpose" required>
+
+            <label for="itemsToView">Items to View:</label>
+            <input type="text" id="itemsToView" required>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" rows="4">
+
+            </textarea>
+            <!-- End of Additional Fields -->
+
+
+            <button type="submit"> Schedule Appointment</button>
+        </div>
+        <div id="confirmationMessage"></div>
+        <button onclick="location.href='index.html'">Return back to Appointment</button>
+    </div>
+
+   
+    <div id="StoreLocations" class="tab-content">
+        <h1>Available Store Locations</h1>
+        <div id="locations" class="locations-slot-container">
+
+        </div>
+
+         <!-- Locations will be dynamically populated here-->
+        <div id="locations" class="location-slot-container">
+            <!-- Location slots will be dynamically populated here -->
+        </div>
+        
+     
+        <!-- <button type="ViewLocationBtn">Submit Location</button> -->
+        <button onclick="location.href='index.html'">Return back to Appointment</button>
+    </div>
+
+    <div id="appointmentsList" class="tab-content">
+        <h1>Appointment List</h1>
+        <div id="appointmentsList" c class="appointments-list-container">
+            <!-- Appointments list will be dynamically populated here --> 
+        </div>
+        <button onclick="location.href='index.html'">Return back to Appointment</button>
+    </div>
+    
+
+
+    <div id="confirmationMessage"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
