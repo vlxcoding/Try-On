@@ -1,0 +1,10 @@
+<!-- customer_support/templates/customer_support/ticket_details.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ ticket.subject }}</h2>
+  <p>Submitted by: {{ ticket.user.username }}</p>
+  <p>Status: {{ ticket.status }}</p>
+  <p>Description: {{ ticket.description }}</p>
+  <p>Created at: {{ ticket.created_at }}</p>
+{% endblock %}

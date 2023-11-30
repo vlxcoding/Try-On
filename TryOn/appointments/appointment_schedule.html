@@ -1,0 +1,27 @@
+<!-- appointments/templates/appointments/appointment_schedule.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Your Scheduled Appointments</h2>
+  
+  {% if appointments %}
+    <ul>
+      {% for appointment in appointments %}
+        <li>
+          <a href="{% url 'appointment_details' appointment.id %}">
+            Appointment on {{ appointment.date }} at {{ appointment.time_slot }} for {{ appointment.store_location }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No appointments scheduled. Schedule a new appointment to explore our collection.</p>
+  {% endif %}
+
+  <h2>Schedule New Appointment</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Schedule Appointment</button>
+  </form>
+{% endblock %}

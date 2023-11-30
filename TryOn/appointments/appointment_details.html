@@ -1,0 +1,24 @@
+<!-- appointments/templates/appointments/appointment_details.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Appointment Details</h2>
+
+  <p><strong>Date:</strong> {{ appointment.date }}</p>
+  <p><strong>Time Slot:</strong> {{ appointment.time_slot }}</p>
+  <p><strong>Store Location:</strong> {{ appointment.store_location }}</p>
+  <p><strong>Purpose:</strong> {{ appointment.purpose }}</p>
+  
+  <h3>Items to View:</h3>
+  {% if appointment.items_to_view.all %}
+    <ul>
+      {% for item in appointment.items_to_view.all %}
+        <li>{{ item.name }} - {{ item.description }} - Price: ${{ item.price }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No specific items selected for viewing.</p>
+  {% endif %}
+
+  <p><strong>Notes:</strong> {{ appointment.notes }}</p>
+{% endblock %}

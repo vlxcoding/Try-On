@@ -1,0 +1,13 @@
+<!-- customer_support/templates/customer_support/tickets_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Tickets</h2>
+  <ul>
+    {% for ticket in tickets %}
+      <li>
+        <a href="{% url 'customer_support:ticket_details' ticket.id %}">{{ ticket.subject }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

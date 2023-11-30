@@ -1,0 +1,20 @@
+<!-- checkout/order_summary.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Summary</title>
+</head>
+<body>
+    <h1>Order Summary</h1>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Total Price: ${{ order.total_price }}</p>
+    <p>Payment Status: {{ order.payment_status }}</p>
+
+    <h2>Ordered Products:</h2>
+    <ul>
+        {% for item in order.orderitem_set.all %}
+            <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Subtotal: ${{ item.subtotal_price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
