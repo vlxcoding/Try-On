@@ -39,11 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles','appointments',  # Add your apps here
-    'inventory',
-    'shopping_cart',
-    'checkout',
-    'customer_support'
+    'django.contrib.staticfiles',
+    'base'
 ]
 
 MIDDLEWARE = [
